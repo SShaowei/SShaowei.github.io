@@ -11,7 +11,7 @@
           content="Wei Shao - Master's student at Hefei University of Technology. Research interests include Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression and Multimodal AI.">
 
     <meta name="keywords"
-          content="Wei Shao, Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression, Hefei University of Technology">
+          content="Wei Shao, Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression, Multimodal AI, Hefei University of Technology">
 
     <meta name="author"
           content="Wei Shao">
@@ -33,10 +33,12 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 90px;
         }
+
 
         :root {
 
@@ -45,7 +47,7 @@
             --primary-dark: #1d4ed8;
 
             --blue-soft: #eff6ff;
-            --blue-soft-2: #f5f9ff;
+            --blue-soft-2: #f6faff;
 
             --background: #ffffff;
             --background-soft: #f8fafc;
@@ -64,7 +66,6 @@
                 0 18px 45px rgba(37, 99, 235, 0.10);
 
             --radius: 18px;
-            --radius-large: 28px;
 
             --container-width: 1180px;
         }
@@ -106,11 +107,6 @@
         }
 
 
-        button {
-            font-family: inherit;
-        }
-
-
         .container {
 
             width:
@@ -145,7 +141,6 @@
                 rgba(255, 255, 255, 0.90);
 
             backdrop-filter: blur(18px);
-
             -webkit-backdrop-filter: blur(18px);
 
             border-bottom:
@@ -189,7 +184,7 @@
 
             align-items: center;
 
-            gap: 26px;
+            gap: 24px;
 
             list-style: none;
         }
@@ -197,7 +192,7 @@
 
         .nav-links a {
 
-            font-size: 14px;
+            font-size: 13.5px;
 
             font-weight: 500;
 
@@ -218,11 +213,14 @@
 
             border-radius: 8px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
-            background: white;
+            background: #ffffff;
 
-            color: var(--text-main) !important;
+            color:
+                var(--text-main) !important;
         }
 
 
@@ -230,7 +228,8 @@
 
             border-color: var(--primary);
 
-            color: var(--primary) !important;
+            color:
+                var(--primary) !important;
         }
 
 
@@ -239,10 +238,9 @@
             display: none;
 
             width: 40px;
-
             height: 40px;
 
-            border: 0;
+            border: none;
 
             border-radius: 9px;
 
@@ -267,7 +265,9 @@
 
             overflow: hidden;
 
-            padding: 90px 0 85px;
+            padding:
+                90px 0
+                85px;
 
             background:
 
@@ -296,13 +296,11 @@
             position: absolute;
 
             width: 450px;
-
             height: 450px;
 
             border-radius: 50%;
 
             right: -240px;
-
             top: -210px;
 
             border:
@@ -350,7 +348,6 @@
         .eyebrow-line {
 
             width: 28px;
-
             height: 1px;
 
             background: var(--primary-light);
@@ -380,7 +377,7 @@
 
         .hero-description {
 
-            max-width: 680px;
+            max-width: 690px;
 
             color: var(--text-secondary);
 
@@ -466,7 +463,7 @@
                 #cbd5e1;
 
             background:
-                rgba(255, 255, 255, 0.9);
+                rgba(255, 255, 255, 0.92);
 
             color: var(--text-main);
         }
@@ -477,6 +474,64 @@
             border-color: var(--primary);
 
             color: var(--primary);
+        }
+
+
+
+        /* =========================================================
+           Hero Social
+        ========================================================= */
+
+        .hero-social {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 20px;
+        }
+
+
+        .hero-social a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 7px 10px;
+
+            border-radius: 8px;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .hero-social a:hover {
+
+            color: var(--primary);
+
+            background: var(--blue-soft);
+        }
+
+
+        .hero-social svg {
+
+            width: 16px;
+            height: 16px;
+
+            flex-shrink: 0;
         }
 
 
@@ -493,7 +548,7 @@
 
             gap: 9px;
 
-            margin-top: 28px;
+            margin-top: 24px;
         }
 
 
@@ -550,17 +605,14 @@
             position: absolute;
 
             width: 100%;
-
             height: 100%;
 
             top: -18px;
-
             right: -20px;
 
             border-radius: 29px;
 
             background:
-
                 linear-gradient(
                     135deg,
                     #eff6ff,
@@ -600,7 +652,6 @@
             z-index: 3;
 
             bottom: 22px;
-
             right: -25px;
 
             padding: 10px 14px;
@@ -631,7 +682,7 @@
 
 
         /* =========================================================
-           Shared Section
+           Sections
         ========================================================= */
 
         section.content-section {
@@ -677,7 +728,7 @@
 
         .section-description {
 
-            max-width: 630px;
+            max-width: 650px;
 
             color: var(--text-secondary);
 
@@ -699,19 +750,8 @@
 
 
         /* =========================================================
-           Research
+           Cards
         ========================================================= */
-
-        .research-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 22px;
-        }
-
 
         .card {
 
@@ -742,6 +782,22 @@
         }
 
 
+
+        /* =========================================================
+           Research
+        ========================================================= */
+
+        .research-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+
         .research-card {
 
             padding: 30px;
@@ -754,7 +810,7 @@
 
             align-items: center;
 
-            gap: 9px;
+            gap: 10px;
 
             margin-bottom: 18px;
 
@@ -769,6 +825,22 @@
             font-size: 22px;
 
             font-weight: 500;
+        }
+
+
+        .research-date {
+
+            padding: 4px 8px;
+
+            border-radius: 6px;
+
+            background: var(--blue-soft);
+
+            color: var(--primary-dark);
+
+            font-size: 10px;
+
+            font-weight: 650;
         }
 
 
@@ -849,7 +921,7 @@
 
             padding: 25px;
 
-            min-height: 280px;
+            min-height: 300px;
         }
 
 
@@ -868,7 +940,6 @@
         .project-icon {
 
             width: 42px;
-
             height: 42px;
 
             display: flex;
@@ -879,22 +950,21 @@
 
             border-radius: 11px;
 
-            background:
-                var(--blue-soft);
+            background: var(--blue-soft);
 
             color: var(--primary);
 
-            font-size: 18px;
+            font-size: 14px;
 
-            font-weight: 700;
+            font-weight: 750;
         }
 
 
-        .project-arrow {
+        .project-date {
 
-            color: var(--primary);
+            color: var(--text-light);
 
-            font-size: 20px;
+            font-size: 11px;
         }
 
 
@@ -996,11 +1066,21 @@
             display: grid;
 
             grid-template-columns:
-                70px 1fr;
+                115px 1fr;
 
-            gap: 23px;
+            gap: 25px;
 
-            padding: 27px 29px;
+            padding: 29px;
+        }
+
+
+        .publication-meta {
+
+            padding-right: 20px;
+
+            border-right:
+                1px solid
+                var(--border);
         }
 
 
@@ -1008,9 +1088,23 @@
 
             color: var(--primary);
 
-            font-size: 22px;
+            font-size: 24px;
 
             font-weight: 500;
+        }
+
+
+        .publication-year {
+
+            display: block;
+
+            margin-top: 6px;
+
+            color: var(--text-main);
+
+            font-size: 13px;
+
+            font-weight: 700;
         }
 
 
@@ -1022,11 +1116,13 @@
 
             color: var(--text-light);
 
-            font-size: 10px;
+            font-size: 9.5px;
 
             text-transform: uppercase;
 
-            letter-spacing: 0.8px;
+            letter-spacing: 0.7px;
+
+            line-height: 1.4;
         }
 
 
@@ -1034,7 +1130,7 @@
 
             margin-bottom: 8px;
 
-            font-size: 17px;
+            font-size: 18px;
 
             line-height: 1.45;
         }
@@ -1060,6 +1156,52 @@
         }
 
 
+        .publication-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 16px;
+        }
+
+
+        .publication-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 7px 12px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 8px;
+
+            color: var(--text-secondary);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+
+        .publication-link:hover {
+
+            color: var(--primary);
+
+            border-color: var(--primary);
+
+            background: var(--blue-soft);
+        }
+
+
 
         /* =========================================================
            Education
@@ -1078,15 +1220,12 @@
             position: absolute;
 
             top: 10px;
-
             bottom: 12px;
-
             left: 7px;
 
             width: 2px;
 
             background:
-
                 linear-gradient(
                     180deg,
                     #60a5fa,
@@ -1122,11 +1261,9 @@
             position: absolute;
 
             left: 0;
-
             top: 5px;
 
             width: 16px;
-
             height: 16px;
 
             border-radius: 50%;
@@ -1210,7 +1347,6 @@
             position: absolute;
 
             width: 90px;
-
             height: 90px;
 
             border-radius: 50%;
@@ -1219,7 +1355,6 @@
                 rgba(59, 130, 246, 0.07);
 
             right: -25px;
-
             top: -25px;
         }
 
@@ -1263,7 +1398,9 @@
 
         .contact-section {
 
-            padding: 75px 0 85px;
+            padding:
+                75px 0
+                85px;
         }
 
 
@@ -1278,7 +1415,6 @@
             border-radius: 26px;
 
             background:
-
                 linear-gradient(
                     125deg,
                     #2563eb,
@@ -1297,7 +1433,6 @@
             position: absolute;
 
             width: 330px;
-
             height: 330px;
 
             border-radius: 50%;
@@ -1306,7 +1441,6 @@
                 rgba(255, 255, 255, 0.10);
 
             right: -120px;
-
             top: -170px;
         }
 
@@ -1318,7 +1452,6 @@
             position: absolute;
 
             width: 130px;
-
             height: 130px;
 
             border-radius: 50%;
@@ -1328,7 +1461,6 @@
                 rgba(255, 255, 255, 0.18);
 
             right: 150px;
-
             bottom: -70px;
         }
 
@@ -1353,7 +1485,7 @@
 
         .contact-card p {
 
-            max-width: 630px;
+            max-width: 660px;
 
             color:
                 rgba(255, 255, 255, 0.88);
@@ -1405,6 +1537,20 @@
             font-size: 13px;
 
             font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .contact-button-outline:hover {
+
+            background:
+                rgba(255, 255, 255, 0.11);
+
+            border-color:
+                rgba(255, 255, 255, 0.8);
         }
 
 
@@ -1413,17 +1559,21 @@
            Footer
         ========================================================= */
 
-        footer {
-
-            padding: 34px 0;
+        .site-footer {
 
             border-top:
                 1px solid
                 var(--border);
+
+            background: #ffffff;
+
+            padding:
+                42px 0
+                24px;
         }
 
 
-        .footer-content {
+        .footer-main {
 
             display: flex;
 
@@ -1431,15 +1581,28 @@
 
             align-items: center;
 
-            gap: 25px;
+            gap: 40px;
+
+            padding-bottom: 30px;
+        }
+
+
+        .footer-identity {
+            flex-shrink: 0;
         }
 
 
         .footer-logo {
 
-            font-size: 18px;
+            display: inline-block;
 
-            font-weight: 750;
+            font-size: 21px;
+
+            font-weight: 760;
+
+            letter-spacing: -0.5px;
+
+            color: var(--text-main);
         }
 
 
@@ -1450,34 +1613,100 @@
 
         .footer-motto {
 
-            margin-top: 3px;
+            margin-top: 5px;
 
             color: var(--text-light);
 
-            font-size: 10px;
+            font-size: 11px;
 
-            letter-spacing: 2px;
+            letter-spacing: 1.6px;
         }
 
 
-        .footer-links {
+        .footer-social {
 
             display: flex;
 
-            gap: 20px;
+            align-items: center;
 
-            font-size: 12px;
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .footer-social a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            min-height: 40px;
+
+            padding: 8px 13px;
+
+            border:
+                1px solid
+                transparent;
+
+            border-radius: 9px;
 
             color: var(--text-secondary);
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
         }
 
 
-        .footer-links a:hover {
+        .footer-social a:hover {
+
             color: var(--primary);
+
+            background: var(--blue-soft);
+
+            border-color: var(--border-blue);
+
+            transform: translateY(-1px);
         }
 
 
-        .copyright {
+        .footer-social svg {
+
+            width: 18px;
+            height: 18px;
+
+            flex-shrink: 0;
+        }
+
+
+        .footer-bottom {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                #f1f5f9;
 
             color: var(--text-light);
 
@@ -1485,9 +1714,14 @@
         }
 
 
+        .footer-note {
+            text-align: right;
+        }
+
+
 
         /* =========================================================
-           Responsive - Tablet
+           Tablet
         ========================================================= */
 
         @media (max-width: 980px) {
@@ -1501,13 +1735,11 @@
 
 
             .portrait-area {
-
                 justify-content: flex-start;
             }
 
 
             .portrait-wrapper {
-
                 width: 330px;
             }
 
@@ -1534,22 +1766,21 @@
 
 
             .nav-links {
-
-                gap: 16px;
+                gap: 15px;
             }
 
 
             .nav-links li:nth-child(5),
             .nav-links li:nth-child(6) {
-
                 display: none;
             }
+
         }
 
 
 
         /* =========================================================
-           Responsive - Mobile
+           Mobile
         ========================================================= */
 
         @media (max-width: 720px) {
@@ -1579,9 +1810,7 @@
                 position: absolute;
 
                 left: 15px;
-
                 right: 15px;
-
                 top: 66px;
 
                 display: none;
@@ -1614,7 +1843,6 @@
 
 
             .nav-links li {
-
                 display: block !important;
             }
 
@@ -1629,7 +1857,7 @@
 
             .nav-cv {
 
-                border: 0;
+                border: none;
 
                 padding: 11px 10px;
             }
@@ -1637,7 +1865,9 @@
 
             .hero {
 
-                padding: 57px 0 65px;
+                padding:
+                    57px 0
+                    65px;
             }
 
 
@@ -1650,7 +1880,6 @@
 
 
             .hero-description {
-
                 font-size: 15px;
             }
 
@@ -1666,14 +1895,14 @@
 
 
             .portrait-note {
-
                 right: -4px;
             }
 
 
             section.content-section {
 
-                padding: 60px 0;
+                padding:
+                    60px 0;
             }
 
 
@@ -1687,24 +1916,9 @@
             }
 
 
-            .research-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .project-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .skills-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-
+            .research-grid,
+            .project-grid,
+            .skills-grid,
             .awards-grid {
 
                 grid-template-columns: 1fr;
@@ -1715,7 +1929,21 @@
 
                 grid-template-columns: 1fr;
 
-                gap: 10px;
+                gap: 12px;
+            }
+
+
+            .publication-meta {
+
+                padding-right: 0;
+
+                padding-bottom: 14px;
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid
+                    var(--border);
             }
 
 
@@ -1729,15 +1957,41 @@
 
             .contact-card {
 
-                padding: 36px 26px;
+                padding:
+                    36px 26px;
             }
 
 
-            .footer-content {
+            .footer-main {
 
                 flex-direction: column;
 
                 align-items: flex-start;
+
+                gap: 24px;
+            }
+
+
+            .footer-social {
+
+                justify-content: flex-start;
+
+                width: 100%;
+            }
+
+
+            .footer-bottom {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 6px;
+            }
+
+
+            .footer-note {
+                text-align: left;
             }
 
         }
@@ -1745,25 +1999,22 @@
 
 
         /* =========================================================
-           Very Small Screens
+           Small Mobile
         ========================================================= */
 
         @media (max-width: 450px) {
 
             .hero h1 {
-
                 font-size: 37px;
             }
 
 
             .button {
-
                 width: 100%;
             }
 
 
             .hero-actions {
-
                 flex-direction: column;
             }
 
@@ -1772,7 +2023,34 @@
 
                 flex-direction: column;
 
-                align-items: flex-start;
+                align-items: stretch;
+            }
+
+
+            .contact-links a {
+                text-align: center;
+            }
+
+
+            .footer-social {
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .footer-social a {
+
+                justify-content: flex-start;
+
+                width: 100%;
+
+                padding: 10px 12px;
+
+                background: #f8fafc;
+
+                border-color: var(--border);
             }
 
         }
@@ -1866,11 +2144,9 @@
             </li>
 
             <li>
-
                 <a href="#contact">
                     Contact
                 </a>
-
             </li>
 
         </ul>
@@ -1886,7 +2162,7 @@
 
 
 <!-- =============================================================
-     HERO / ABOUT
+     About / Hero
 ============================================================= -->
 
 <section
@@ -1899,9 +2175,8 @@
     <div class="container hero-grid">
 
 
-        <!-- Left -->
+        <div>
 
-        <div class="hero-copy">
 
             <div class="eyebrow">
 
@@ -1929,8 +2204,10 @@
                 at Hefei University of Technology.
 
                 My research focuses on Large Language Model agents,
-                Mobile GUI Agents, Retrieval-Augmented Generation,
-                multimodal intelligence, multi-agent systems,
+                Mobile GUI Agents,
+                Retrieval-Augmented Generation,
+                multimodal intelligence,
+                multi-agent systems,
                 and context compression.
 
                 I am particularly interested in building efficient,
@@ -1939,6 +2216,7 @@
                 and interact with real-world applications.
 
             </p>
+
 
 
             <div class="hero-actions">
@@ -1958,6 +2236,83 @@
                     class="button button-secondary">
 
                     View CV
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Social links -->
+
+            <div class="hero-social">
+
+
+                <!-- GitHub -->
+
+                <a
+                    href="https://github.com/SShaowei"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M12 .7C5.7.7.7 5.8.7 12.2c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C16.8 5 17.8 5.3 17.8 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.1v3.2c0 .4.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.8 18.3.7 12 .7z">
+                        </path>
+
+                    </svg>
+
+                    GitHub
+
+                </a>
+
+
+
+                <!-- Scholar -->
+
+                <a
+                    href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M12 3 1.8 8.4 12 13.8l8.3-4.4V16h2V8.4L12 3zm-6 9.2V17c0 2.2 2.7 4 6 4s6-1.8 6-4v-4.8L12 15.4 6 12.2z">
+                        </path>
+
+                    </svg>
+
+                    Google Scholar
+
+                </a>
+
+
+
+                <!-- Email -->
+
+                <a
+                    href="mailto:shao_wei@mail.hfut.edu.cn">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7 8-5H4l8 5zm0 2.3L3 8.7V17h18V8.7l-9 5.6z">
+                        </path>
+
+                    </svg>
+
+                    Email
 
                 </a>
 
@@ -1997,7 +2352,7 @@
 
 
 
-        <!-- Right / Portrait -->
+        <!-- Portrait -->
 
         <div class="portrait-area">
 
@@ -2013,9 +2368,7 @@
 
 
                 <div class="portrait-note">
-
                     Explore · Build · Share
-
                 </div>
 
             </div>
@@ -2030,7 +2383,7 @@
 
 
 <!-- =============================================================
-     RESEARCH
+     Research
 ============================================================= -->
 
 <section
@@ -2050,10 +2403,12 @@
 
                 <p class="section-description">
 
-                    My current research interests center on
-                    intelligent agents, context-efficient reasoning,
-                    retrieval-augmented systems, and reliable
-                    interaction with mobile applications.
+                    My current research centers on
+                    intelligent agents,
+                    context-efficient reasoning,
+                    retrieval-augmented systems,
+                    multimodal interaction,
+                    and reliable mobile task automation.
 
                 </p>
 
@@ -2087,6 +2442,10 @@
 
                     Current Research
 
+                    <span class="research-date">
+                        2026 — Present
+                    </span>
+
                 </div>
 
 
@@ -2104,9 +2463,9 @@
                     strategies for mobile GUI agents.
 
                     The goal is to reduce redundant contextual
-                    information while retaining executable,
-                    task-relevant evidence required for
-                    reliable planning and interaction.
+                    information while preserving executable
+                    and task-relevant evidence required for
+                    reliable planning, reasoning, and interaction.
 
                 </p>
 
@@ -2160,9 +2519,12 @@
 
                 <p>
 
-                    Investigating retrieval, context selection,
-                    conversational memory, dynamic prompts,
-                    and long-horizon information management
+                    Investigating retrieval,
+                    context selection,
+                    conversational memory,
+                    dynamic prompt management,
+                    long-horizon reasoning,
+                    and information retention
                     for LLM-powered agent systems.
 
                 </p>
@@ -2200,7 +2562,7 @@
 
 
 <!-- =============================================================
-     PROJECTS
+     Projects
 ============================================================= -->
 
 <section
@@ -2221,7 +2583,9 @@
                 <p class="section-description">
 
                     Research and engineering projects spanning
-                    LLM agents, retrieval-augmented generation,
+                    LLM agents,
+                    retrieval-augmented generation,
+                    mobile interaction,
                     deep reinforcement learning,
                     and intelligent automation.
 
@@ -2246,8 +2610,8 @@
                         AI
                     </div>
 
-                    <div class="project-arrow">
-                        →
+                    <div class="project-date">
+                        2024 — Present
                     </div>
 
                 </div>
@@ -2263,12 +2627,12 @@
                     A multi-agent platform integrating
                     retrieval-augmented generation,
                     personalized agents,
-                    automated content production,
-                    social-media interaction,
+                    automated content generation,
                     multi-source retrieval,
                     reranking,
                     dynamic prompt state machines,
-                    and conversational memory.
+                    conversational memory,
+                    and modular tool integration.
 
                 </p>
 
@@ -2311,8 +2675,8 @@
                         GUI
                     </div>
 
-                    <div class="project-arrow">
-                        →
+                    <div class="project-date">
+                        2026 — Present
                     </div>
 
                 </div>
@@ -2326,12 +2690,14 @@
                 <p>
 
                     Research on reducing the execution context
-                    required by mobile GUI agents while
-                    preserving task-relevant information.
+                    required by mobile GUI agents while preserving
+                    task-relevant information.
 
                     The work focuses on context efficiency,
-                    agent reasoning, task execution,
-                    and evaluation.
+                    reasoning,
+                    mobile interaction,
+                    task execution,
+                    and agent evaluation.
 
                 </p>
 
@@ -2370,8 +2736,8 @@
                         RL
                     </div>
 
-                    <div class="project-arrow">
-                        →
+                    <div class="project-date">
+                        2022 — 2023
                     </div>
 
                 </div>
@@ -2386,9 +2752,11 @@
                 <p>
 
                     Led a research project using DQN,
-                    LSTM, DSSAT, and multi-source
-                    agricultural data to model irrigation
-                    decision-making based on soil conditions,
+                    LSTM,
+                    DSSAT,
+                    and multi-source agricultural data
+                    to model intelligent irrigation decisions
+                    based on soil conditions,
                     environmental factors,
                     and crop growth.
 
@@ -2427,7 +2795,7 @@
 
 
 <!-- =============================================================
-     SKILLS
+     Skills
 ============================================================= -->
 
 <section class="content-section alt">
@@ -2445,8 +2813,8 @@
 
                 <p class="section-description">
 
-                    Selected areas of research and engineering
-                    experience relevant to my current work.
+                    Selected research and engineering areas
+                    relevant to my current work.
 
                 </p>
 
@@ -2500,7 +2868,7 @@
                     Multi-agent systems,
                     task orchestration,
                     prompt state machines,
-                    sliding-window context,
+                    context management,
                     automated summaries,
                     and agent memory.
 
@@ -2522,12 +2890,14 @@
 
                 <p>
 
-                    Python, Java, JavaScript,
+                    Python,
+                    Java,
+                    JavaScript,
                     Spring,
                     CompletableFuture,
                     modular architectures,
                     design patterns,
-                    and MCP tool integration.
+                    and MCP integration.
 
                 </p>
 
@@ -2570,7 +2940,7 @@
 
 
 <!-- =============================================================
-     PUBLICATIONS
+     Publications
 ============================================================= -->
 
 <section
@@ -2590,11 +2960,22 @@
 
                 <p class="section-description">
 
-                    Selected publication and ongoing research work.
+                    Selected publications and ongoing research.
 
                 </p>
 
             </div>
+
+
+            <a
+                href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="section-link">
+
+                Google Scholar →
+
+            </a>
 
         </div>
 
@@ -2603,18 +2984,24 @@
         <div class="publication-list">
 
 
-            <!-- Publication 1 -->
+            <!-- =================================================
+                 SCI PAPER
+            ================================================== -->
 
             <article class="card publication">
 
-                <div>
+                <div class="publication-meta">
 
                     <div class="publication-index">
                         01
                     </div>
 
+                    <span class="publication-year">
+                        2022 — 2023
+                    </span>
+
                     <span class="publication-type">
-                        Journal
+                        SCI Journal Article
                     </span>
 
                 </div>
@@ -2659,6 +3046,25 @@
                             Smart Agriculture
                         </span>
 
+                        <span class="small-tag">
+                            Decision Making
+                        </span>
+
+                    </div>
+
+
+                    <div class="publication-links">
+
+                        <a
+                            href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="publication-link">
+
+                            Google Scholar
+
+                        </a>
+
                     </div>
 
                 </div>
@@ -2667,18 +3073,24 @@
 
 
 
-            <!-- Research Paper 2 -->
+            <!-- =================================================
+                 CURRENT PAPER
+            ================================================== -->
 
             <article class="card publication">
 
-                <div>
+                <div class="publication-meta">
 
                     <div class="publication-index">
                         02
                     </div>
 
+                    <span class="publication-year">
+                        2026 — Present
+                    </span>
+
                     <span class="publication-type">
-                        Current Work
+                        Ongoing Research
                     </span>
 
                 </div>
@@ -2711,11 +3123,15 @@
                     <div class="small-tags">
 
                         <span class="small-tag">
-                            Mobile GUI Agent
+                            Mobile GUI Agents
                         </span>
 
                         <span class="small-tag">
                             Context Compression
+                        </span>
+
+                        <span class="small-tag">
+                            LLM Agents
                         </span>
 
                         <span class="small-tag">
@@ -2738,7 +3154,7 @@
 
 
 <!-- =============================================================
-     EDUCATION
+     Education
 ============================================================= -->
 
 <section
@@ -2860,7 +3276,7 @@
 
 
 <!-- =============================================================
-     AWARDS
+     Awards
 ============================================================= -->
 
 <section
@@ -2895,8 +3311,6 @@
         <div class="awards-grid">
 
 
-            <!-- Award 1 -->
-
             <article class="card award-card">
 
                 <div class="award-label">
@@ -2919,8 +3333,6 @@
             </article>
 
 
-
-            <!-- Award 2 -->
 
             <article class="card award-card">
 
@@ -2946,8 +3358,6 @@
             </article>
 
 
-
-            <!-- Award 3 -->
 
             <article class="card award-card">
 
@@ -2981,7 +3391,7 @@
 
 
 <!-- =============================================================
-     CONTACT
+     Contact
 ============================================================= -->
 
 <section
@@ -3028,12 +3438,6 @@
                     </a>
 
 
-                    <!--
-                    Replace # with your real GitHub URL.
-                    Example:
-                    https://github.com/yourname
-                    -->
-
                     <a
                         href="https://github.com/SShaowei"
                         target="_blank"
@@ -3045,18 +3449,14 @@
                     </a>
 
 
-                    <!--
-                    Replace # with your Google Scholar URL.
-                    -->
-
                     <a
                         href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="contact-button-outline">
-                    
+
                         Google Scholar
-                    
+
                     </a>
 
 
@@ -3077,26 +3477,119 @@
 
 
 <!-- =============================================================
-     FOOTER
+     Footer
 ============================================================= -->
 
-<footer>
+<footer class="site-footer">
 
-    <div class="container footer-content">
+    <div class="container">
 
 
-        <div>
+        <div class="footer-main">
 
-            <div class="footer-logo">
 
-                Wei <span>Shao.</span>
+            <!-- Left -->
+
+            <div class="footer-identity">
+
+                <a
+                    href="#about"
+                    class="footer-logo">
+
+                    Wei <span>Shao.</span>
+
+                </a>
+
+
+                <p class="footer-motto">
+
+                    Explore · Build · Share
+
+                </p>
 
             </div>
 
 
-            <div class="footer-motto">
 
-                EXPLORE · BUILD · SHARE
+            <!-- Right -->
+
+            <div class="footer-social">
+
+
+                <!-- GitHub -->
+
+                <a
+                    href="https://github.com/SShaowei"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M12 .7C5.7.7.7 5.8.7 12.2c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C16.8 5 17.8 5.3 17.8 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.1v3.2c0 .4.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.9C23.3 5.8 18.3.7 12 .7z">
+                        </path>
+
+                    </svg>
+
+                    <span>
+                        GitHub
+                    </span>
+
+                </a>
+
+
+
+                <!-- Google Scholar -->
+
+                <a
+                    href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M12 3 1.8 8.4 12 13.8l8.3-4.4V16h2V8.4L12 3zm-6 9.2V17c0 2.2 2.7 4 6 4s6-1.8 6-4v-4.8L12 15.4 6 12.2z">
+                        </path>
+
+                    </svg>
+
+                    <span>
+                        Google Scholar
+                    </span>
+
+                </a>
+
+
+
+                <!-- Email -->
+
+                <a
+                    href="mailto:shao_wei@mail.hfut.edu.cn">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true">
+
+                        <path
+                            fill="currentColor"
+                            d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 7 8-5H4l8 5zm0 2.3L3 8.7V17h18V8.7l-9 5.6z">
+                        </path>
+
+                    </svg>
+
+                    <span>
+                        Email
+                    </span>
+
+                </a>
+
 
             </div>
 
@@ -3104,46 +3597,22 @@
 
 
 
-        <div class="footer-links">
+        <div class="footer-bottom">
+
+            <span>
+
+                ©
+                <span id="currentYear"></span>
+                Wei Shao
+
+            </span>
 
 
-            <!-- Replace # with your links -->
+            <span class="footer-note">
 
-            <a
-                href="https://github.com/SShaowei"
-                target="_blank"
-                rel="noopener noreferrer">
+                M.S. Student · Hefei University of Technology
 
-                GitHub
-
-            </a>
-
-
-            <a
-                href="https://scholar.google.com/citations?view_op=list_works&user=0uEbi78AAAAJ"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-button-outline">
-            
-                Google Scholar
-            
-            </a>
-
-
-            <a
-                href="mailto:shao_wei@mail.hfut.edu.cn">
-
-                Email
-
-            </a>
-
-        </div>
-
-
-
-        <div class="copyright">
-
-            © <span id="currentYear"></span> Wei Shao
+            </span>
 
         </div>
 
@@ -3181,8 +3650,10 @@
     );
 
 
+
     /*
-     * Close menu after clicking a link
+     * Close mobile menu
+     * after selecting a navigation link.
      */
 
     const mobileLinks =
@@ -3207,8 +3678,9 @@
     );
 
 
+
     /*
-     * Automatically update copyright year
+     * Automatic copyright year
      */
 
     document.getElementById(
