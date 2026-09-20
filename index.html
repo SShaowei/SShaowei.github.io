@@ -3,54 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wei Shao | Hefei University of Technology</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Wei Shao - Master's student at Hefei University of Technology. Research interests include Mobile GUI Agents, LLM Agents, Context Compression and Agentic AI.">
+          content="Wei Shao - Master's student at Hefei University of Technology. Research interests include Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression and Multimodal AI.">
+
+    <meta name="keywords"
+          content="Wei Shao, Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression, Hefei University of Technology">
+
+    <meta name="author"
+          content="Wei Shao">
+
+    <title>
+        Wei Shao | Hefei University of Technology
+    </title>
+
 
     <style>
-        /* =========================
+
+        /* =========================================================
            Global
-        ========================== */
+        ========================================================= */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         :root {
+
             --primary: #2563eb;
             --primary-light: #3b82f6;
-            --primary-soft: #eff6ff;
+            --primary-dark: #1d4ed8;
+
+            --blue-soft: #eff6ff;
+            --blue-soft-2: #f5f9ff;
+
+            --background: #ffffff;
+            --background-soft: #f8fafc;
 
             --text-main: #0f172a;
             --text-secondary: #475569;
             --text-light: #64748b;
 
-            --background: #ffffff;
-            --background-soft: #f8fbff;
-
             --border: #e2e8f0;
+            --border-blue: #dbeafe;
 
             --shadow:
-                0 10px 30px rgba(15, 23, 42, 0.06);
+                0 10px 35px rgba(15, 23, 42, 0.055);
 
             --shadow-hover:
-                0 16px 40px rgba(37, 99, 235, 0.10);
+                0 18px 45px rgba(37, 99, 235, 0.10);
 
             --radius: 18px;
+            --radius-large: 28px;
 
-            --container-width: 1160px;
+            --container-width: 1180px;
         }
 
+
         body {
+
             font-family:
                 Inter,
                 -apple-system,
@@ -62,97 +83,206 @@
                 sans-serif;
 
             background: var(--background);
+
             color: var(--text-main);
+
             line-height: 1.65;
 
             -webkit-font-smoothing: antialiased;
+
+            overflow-x: hidden;
         }
+
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
+
         img {
-            max-width: 100%;
             display: block;
+            max-width: 100%;
         }
 
+
+        button {
+            font-family: inherit;
+        }
+
+
         .container {
-            width: min(var(--container-width), calc(100% - 48px));
+
+            width:
+                min(
+                    var(--container-width),
+                    calc(100% - 48px)
+                );
+
             margin: 0 auto;
         }
 
 
-        /* =========================
-           Navigation
-        ========================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        .blue {
+            color: var(--primary);
         }
 
-        nav {
+
+
+        /* =========================================================
+           Navigation
+        ========================================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255, 255, 255, 0.90);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid
+                rgba(226, 232, 240, 0.85);
+        }
+
+
+        .navbar {
+
             height: 74px;
 
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
+
+            justify-content: space-between;
         }
 
+
         .logo {
+
             font-size: 25px;
-            font-weight: 750;
-            letter-spacing: -0.6px;
+
+            font-weight: 780;
+
+            letter-spacing: -0.8px;
+
+            white-space: nowrap;
         }
+
 
         .logo span {
             color: var(--primary);
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
 
-            font-size: 14px;
-            color: var(--text-secondary);
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 26px;
+
+            list-style: none;
         }
+
 
         .nav-links a {
-            transition: 0.2s ease;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            color: var(--text-secondary);
+
+            transition: color 0.2s ease;
         }
+
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
 
-        /* =========================
+        .nav-cv {
+
+            padding: 8px 15px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            color: var(--text-main) !important;
+        }
+
+
+        .nav-cv:hover {
+
+            border-color: var(--primary);
+
+            color: var(--primary) !important;
+        }
+
+
+        .menu-button {
+
+            display: none;
+
+            width: 40px;
+
+            height: 40px;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            background: var(--blue-soft);
+
+            color: var(--primary);
+
+            font-size: 21px;
+
+            cursor: pointer;
+        }
+
+
+
+        /* =========================================================
            Hero
-        ========================== */
+        ========================================================= */
 
         .hero {
-            position: relative;
 
-            padding: 85px 0 75px;
+            position: relative;
 
             overflow: hidden;
 
+            padding: 90px 0 85px;
+
             background:
+
                 radial-gradient(
-                    circle at 82% 35%,
+                    circle at 77% 42%,
                     rgba(96, 165, 250, 0.16),
-                    transparent 30%
+                    transparent 28%
                 ),
+
+                radial-gradient(
+                    circle at 95% 2%,
+                    rgba(191, 219, 254, 0.22),
+                    transparent 22%
+                ),
+
                 linear-gradient(
                     180deg,
                     #ffffff 0%,
@@ -160,103 +290,152 @@
                 );
         }
 
-        .hero::before {
-            content: "";
+
+        .hero-decoration {
+
             position: absolute;
 
-            width: 420px;
-            height: 420px;
+            width: 450px;
 
-            right: -180px;
-            top: -180px;
+            height: 450px;
 
             border-radius: 50%;
 
-            background:
-                rgba(147, 197, 253, 0.13);
+            right: -240px;
 
-            filter: blur(5px);
+            top: -210px;
+
+            border:
+                1px solid
+                rgba(96, 165, 250, 0.18);
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.35fr 0.65fr;
 
-            gap: 80px;
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.35fr)
+                minmax(280px, 0.65fr);
+
+            gap: 75px;
 
             align-items: center;
         }
 
+
         .eyebrow {
-            font-size: 12px;
 
-            text-transform: uppercase;
+            display: flex;
 
-            letter-spacing: 3px;
+            align-items: center;
 
-            color: var(--primary);
+            gap: 10px;
 
             margin-bottom: 22px;
 
+            color: var(--primary);
+
+            font-size: 12px;
+
             font-weight: 650;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2.7px;
         }
+
+
+        .eyebrow-line {
+
+            width: 28px;
+
+            height: 1px;
+
+            background: var(--primary-light);
+        }
+
 
         .hero h1 {
-            max-width: 720px;
 
-            font-size: clamp(42px, 5vw, 66px);
+            max-width: 730px;
 
-            line-height: 1.05;
+            font-size:
+                clamp(
+                    45px,
+                    5.4vw,
+                    68px
+                );
 
-            letter-spacing: -2.5px;
+            line-height: 1.04;
+
+            letter-spacing: -2.8px;
 
             margin-bottom: 24px;
+
+            font-weight: 760;
         }
 
-        .hero h1 .highlight {
-            color: var(--primary);
-        }
 
         .hero-description {
-            max-width: 650px;
+
+            max-width: 680px;
 
             color: var(--text-secondary);
 
-            font-size: 17px;
+            font-size: 16.5px;
 
-            line-height: 1.75;
+            line-height: 1.8;
         }
+
 
         .hero-actions {
+
             display: flex;
+
             flex-wrap: wrap;
 
-            gap: 14px;
+            gap: 13px;
 
-            margin-top: 30px;
+            margin-top: 31px;
         }
 
+
         .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
 
             min-height: 48px;
 
-            padding: 0 22px;
+            display: inline-flex;
 
-            border-radius: 11px;
+            align-items: center;
 
-            font-size: 15px;
-            font-weight: 600;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 0 21px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: 650;
 
             transition:
                 transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease;
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+
         .button-primary {
+
             color: white;
 
             background:
@@ -267,36 +446,49 @@
                 );
 
             box-shadow:
-                0 7px 20px rgba(37, 99, 235, 0.22);
+                0 9px 22px
+                rgba(37, 99, 235, 0.19);
         }
+
 
         .button-primary:hover {
-            transform: translateY(-2px);
 
             box-shadow:
-                0 11px 26px rgba(37, 99, 235, 0.28);
+                0 14px 28px
+                rgba(37, 99, 235, 0.25);
         }
+
 
         .button-secondary {
-            border: 1px solid #cbd5e1;
 
-            background: rgba(255, 255, 255, 0.8);
+            border:
+                1px solid
+                #cbd5e1;
+
+            background:
+                rgba(255, 255, 255, 0.9);
+
+            color: var(--text-main);
         }
+
 
         .button-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
 
-            transform: translateY(-2px);
+            border-color: var(--primary);
+
+            color: var(--primary);
         }
 
 
-        /* =========================
-           Research Tags
-        ========================== */
+
+        /* =========================================================
+           Tags
+        ========================================================= */
 
         .research-tags {
+
             display: flex;
+
             flex-wrap: wrap;
 
             gap: 9px;
@@ -304,50 +496,71 @@
             margin-top: 28px;
         }
 
+
         .tag {
+
             padding: 7px 13px;
 
-            background: var(--primary-soft);
+            border-radius: 999px;
 
-            color: #2563eb;
+            border:
+                1px solid
+                var(--border-blue);
 
-            border: 1px solid #dbeafe;
+            background:
+                rgba(239, 246, 255, 0.88);
 
-            border-radius: 100px;
+            color: var(--primary-dark);
 
-            font-size: 12px;
+            font-size: 11.5px;
 
             white-space: nowrap;
         }
 
 
-        /* =========================
-           Portrait
-        ========================== */
+
+        /* =========================================================
+           Photo
+        ========================================================= */
 
         .portrait-area {
+
             display: flex;
+
+            align-items: center;
+
             justify-content: center;
         }
 
+
         .portrait-wrapper {
+
             position: relative;
 
-            width: min(100%, 365px);
+            width:
+                min(
+                    100%,
+                    355px
+                );
         }
 
-        .portrait-background {
+
+        .portrait-bg {
+
             position: absolute;
 
             width: 100%;
+
             height: 100%;
 
-            right: -24px;
-            top: -24px;
+            top: -18px;
 
-            border-radius: 28px;
+            right: -20px;
+
+            border-radius: 29px;
 
             background:
+
                 linear-gradient(
                     135deg,
                     #eff6ff,
@@ -357,108 +570,140 @@
             transform: rotate(3deg);
         }
 
+
         .portrait {
+
             position: relative;
+
             z-index: 2;
 
             width: 100%;
 
-            aspect-ratio: 0.84 / 1;
+            aspect-ratio: 0.82 / 1;
 
             object-fit: cover;
 
-            /*
-               调整头像位置：
-               第一个值左右
-               第二个值上下
-            */
-            object-position: 57% 42%;
+            object-position: 56% 43%;
 
-            border-radius: 28px;
+            border-radius: 27px;
 
             box-shadow:
-                0 24px 55px rgba(15, 23, 42, 0.16);
+                0 25px 60px
+                rgba(15, 23, 42, 0.16);
         }
 
-        .portrait-caption {
+
+        .portrait-note {
+
             position: absolute;
+
             z-index: 3;
 
-            right: -35px;
-            bottom: 28px;
+            bottom: 22px;
 
-            padding: 9px 14px;
+            right: -25px;
+
+            padding: 10px 14px;
 
             border-radius: 10px;
 
             background:
-                rgba(255, 255, 255, 0.92);
+                rgba(255, 255, 255, 0.94);
 
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.10);
-
-            font-family: Georgia, serif;
-            font-style: italic;
-
-            font-size: 13px;
+                0 10px 30px
+                rgba(15, 23, 42, 0.10);
 
             color: var(--text-secondary);
+
+            font-size: 12px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-style: italic;
 
             transform: rotate(-3deg);
         }
 
 
-        /* =========================
-           Sections
-        ========================== */
 
-        section {
-            padding: 78px 0;
+        /* =========================================================
+           Shared Section
+        ========================================================= */
+
+        section.content-section {
+
+            padding: 80px 0;
         }
 
-        section:nth-of-type(even) {
-            background: var(--background-soft);
+
+        section.alt {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f9fbfe,
+                    #ffffff
+                );
         }
+
 
         .section-header {
+
             display: flex;
-            align-items: flex-end;
+
             justify-content: space-between;
+
+            align-items: flex-end;
 
             gap: 30px;
 
-            margin-bottom: 32px;
+            margin-bottom: 34px;
         }
 
-        .section-header h2 {
+
+        .section-title {
+
             font-size: 31px;
 
-            letter-spacing: -1px;
+            letter-spacing: -1.1px;
+
+            margin-bottom: 8px;
         }
 
-        .section-header p {
-            max-width: 580px;
+
+        .section-description {
+
+            max-width: 630px;
 
             color: var(--text-secondary);
 
-            font-size: 15px;
+            font-size: 14.5px;
         }
 
-        .view-all {
+
+        .section-link {
+
             color: var(--primary);
 
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+
+            font-weight: 650;
 
             white-space: nowrap;
         }
 
 
-        /* =========================
+
+        /* =========================================================
            Research
-        ========================== */
+        ========================================================= */
 
         .research-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -467,12 +712,12 @@
             gap: 22px;
         }
 
-        .research-card {
-            position: relative;
 
-            padding: 30px;
+        .card {
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                var(--border);
 
             border-radius: var(--radius);
 
@@ -481,61 +726,93 @@
             box-shadow: var(--shadow);
 
             transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
+                transform 0.22s ease,
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
         }
 
-        .research-card:hover {
-            transform: translateY(-5px);
+
+        .card:hover {
+
+            transform: translateY(-4px);
 
             border-color: #bfdbfe;
 
             box-shadow: var(--shadow-hover);
         }
 
-        .paper-number {
-            color: var(--primary);
 
-            font-size: 13px;
+        .research-card {
 
-            margin-bottom: 18px;
+            padding: 30px;
         }
 
-        .paper-number strong {
-            font-size: 22px;
 
-            margin-right: 10px;
+        .card-label {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 18px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+        }
+
+
+        .card-number {
+
+            font-size: 22px;
 
             font-weight: 500;
         }
 
+
         .research-card h3 {
+
+            max-width: 520px;
+
+            margin-bottom: 13px;
+
             font-size: 20px;
 
             line-height: 1.35;
 
-            margin-bottom: 14px;
-
-            letter-spacing: -0.3px;
+            letter-spacing: -0.35px;
         }
 
+
         .research-card p {
+
             color: var(--text-secondary);
 
             font-size: 14px;
         }
 
-        .paper-tags {
+
+
+        /* =========================================================
+           Small Tags
+        ========================================================= */
+
+        .small-tags {
+
             display: flex;
+
             flex-wrap: wrap;
 
             gap: 7px;
 
-            margin: 20px 0;
+            margin-top: 19px;
         }
 
-        .paper-tag {
+
+        .small-tag {
+
             padding: 5px 10px;
 
             border-radius: 100px;
@@ -544,43 +821,17 @@
 
             color: #475569;
 
-            font-size: 11px;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .mini-button {
-            display: inline-flex;
-            align-items: center;
-
-            padding: 8px 14px;
-
-            border: 1px solid #cbd5e1;
-
-            border-radius: 8px;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            transition: 0.2s;
-        }
-
-        .mini-button:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-
-            background: var(--primary-soft);
+            font-size: 10.5px;
         }
 
 
-        /* =========================
+
+        /* =========================================================
            Projects
-        ========================== */
+        ========================================================= */
 
         .project-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -589,1052 +840,2382 @@
             gap: 18px;
         }
 
+
         .project-card {
+
+            display: flex;
+
+            flex-direction: column;
+
             padding: 25px;
 
-            border: 1px solid var(--border);
-
-            border-radius: 16px;
-
-            background: white;
-
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
+            min-height: 280px;
         }
 
-        .project-card:hover {
-            transform: translateY(-4px);
-
-            border-color: #bfdbfe;
-
-            box-shadow: var(--shadow-hover);
-        }
 
         .project-top {
+
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
 
-            margin-bottom: 15px;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
         }
 
+
         .project-icon {
+
             width: 42px;
+
             height: 42px;
 
-            display: grid;
-            place-items: center;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
 
             border-radius: 11px;
 
-            background: var(--primary-soft);
+            background:
+                var(--blue-soft);
 
             color: var(--primary);
 
-            font-size: 19px;
+            font-size: 18px;
+
+            font-weight: 700;
         }
 
+
         .project-arrow {
+
             color: var(--primary);
 
             font-size: 20px;
         }
 
+
         .project-card h3 {
+
+            margin-bottom: 10px;
+
             font-size: 17px;
 
-            margin-bottom: 8px;
+            line-height: 1.4;
         }
+
 
         .project-card p {
-            font-size: 13px;
 
             color: var(--text-secondary);
+
+            font-size: 13px;
+
+            flex-grow: 1;
         }
 
 
-        /* =========================
+
+        /* =========================================================
+           Skills
+        ========================================================= */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 17px;
+        }
+
+
+        .skill-card {
+
+            padding: 24px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 16px;
+
+            background: white;
+        }
+
+
+        .skill-icon {
+
+            margin-bottom: 16px;
+
+            color: var(--primary);
+
+            font-size: 20px;
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .skill-card p {
+
+            color: var(--text-secondary);
+
+            font-size: 12.5px;
+
+            line-height: 1.75;
+        }
+
+
+
+        /* =========================================================
+           Publications
+        ========================================================= */
+
+        .publication-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+
+        .publication {
+
+            display: grid;
+
+            grid-template-columns:
+                70px 1fr;
+
+            gap: 23px;
+
+            padding: 27px 29px;
+        }
+
+
+        .publication-index {
+
+            color: var(--primary);
+
+            font-size: 22px;
+
+            font-weight: 500;
+        }
+
+
+        .publication-type {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: var(--text-light);
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.8px;
+        }
+
+
+        .publication-title {
+
+            margin-bottom: 8px;
+
+            font-size: 17px;
+
+            line-height: 1.45;
+        }
+
+
+        .publication-authors {
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            margin-bottom: 4px;
+        }
+
+
+        .publication-venue {
+
+            color: var(--text-light);
+
+            font-size: 12px;
+
+            font-style: italic;
+        }
+
+
+
+        /* =========================================================
            Education
-        ========================== */
+        ========================================================= */
 
         .timeline {
-            position: relative;
 
-            margin-top: 20px;
+            position: relative;
         }
 
+
         .timeline::before {
+
             content: "";
 
             position: absolute;
 
-            left: 7px;
             top: 10px;
-            bottom: 10px;
+
+            bottom: 12px;
+
+            left: 7px;
 
             width: 2px;
 
             background:
+
                 linear-gradient(
-                    #93c5fd,
+                    180deg,
+                    #60a5fa,
                     #dbeafe
                 );
         }
 
+
         .timeline-item {
+
             position: relative;
 
             display: grid;
 
             grid-template-columns:
-                150px 1fr;
+                155px 1fr;
 
-            gap: 28px;
+            gap: 30px;
 
-            padding-left: 37px;
+            padding-left: 38px;
 
-            margin-bottom: 32px;
+            margin-bottom: 35px;
         }
 
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+
         .timeline-dot {
+
             position: absolute;
 
             left: 0;
-            top: 6px;
+
+            top: 5px;
 
             width: 16px;
+
             height: 16px;
 
             border-radius: 50%;
 
-            background: #3b82f6;
+            background: var(--primary-light);
 
-            border: 4px solid #dbeafe;
+            border:
+                4px solid
+                #dbeafe;
         }
+
 
         .timeline-date {
-            color: #1d4ed8;
 
-            font-size: 14px;
-            font-weight: 600;
+            color: var(--primary-dark);
+
+            font-size: 13px;
+
+            font-weight: 650;
         }
+
 
         .timeline-content h3 {
-            font-size: 16px;
 
             margin-bottom: 4px;
+
+            font-size: 17px;
         }
 
-        .timeline-content p {
+
+        .degree {
+
             color: var(--text-secondary);
 
             font-size: 13px;
+
+            margin-bottom: 6px;
         }
 
 
-        /* =========================
-           Contact
-        ========================== */
+        .timeline-detail {
 
-        .contact-card {
+            color: var(--text-light);
+
+            font-size: 12.5px;
+        }
+
+
+
+        /* =========================================================
+           Awards
+        ========================================================= */
+
+        .awards-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+        }
+
+
+        .award-card {
+
             position: relative;
 
             overflow: hidden;
 
-            padding: 48px;
+            padding: 26px;
 
-            border-radius: 24px;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    130deg,
-                    #2563eb,
-                    #3b82f6 55%,
-                    #60a5fa
-                );
+            min-height: 185px;
         }
 
-        .contact-card::after {
+
+        .award-card::before {
+
             content: "";
 
             position: absolute;
 
-            width: 300px;
-            height: 300px;
+            width: 90px;
 
-            right: -100px;
-            top: -120px;
+            height: 90px;
 
             border-radius: 50%;
 
             background:
-                rgba(255, 255, 255, 0.12);
+                rgba(59, 130, 246, 0.07);
+
+            right: -25px;
+
+            top: -25px;
         }
+
+
+        .award-label {
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 650;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .award-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .award-card p {
+
+            color: var(--text-secondary);
+
+            font-size: 12.5px;
+        }
+
+
+
+        /* =========================================================
+           Contact
+        ========================================================= */
+
+        .contact-section {
+
+            padding: 75px 0 85px;
+        }
+
+
+        .contact-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 50px;
+
+            border-radius: 26px;
+
+            background:
+
+                linear-gradient(
+                    125deg,
+                    #2563eb,
+                    #3b82f6 58%,
+                    #60a5fa
+                );
+
+            color: white;
+        }
+
+
+        .contact-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+
+            height: 330px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.10);
+
+            right: -120px;
+
+            top: -170px;
+        }
+
+
+        .contact-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.18);
+
+            right: 150px;
+
+            bottom: -70px;
+        }
+
+
+        .contact-content {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
 
         .contact-card h2 {
-            font-size: 30px;
 
             margin-bottom: 10px;
+
+            font-size: 31px;
+
+            letter-spacing: -0.8px;
         }
+
 
         .contact-card p {
-            color:
-                rgba(255, 255, 255, 0.86);
 
-            margin-bottom: 24px;
+            max-width: 630px;
+
+            color:
+                rgba(255, 255, 255, 0.88);
+
+            font-size: 14px;
+
+            margin-bottom: 23px;
         }
 
-        .contact-email {
-            display: inline-flex;
 
-            padding: 11px 17px;
+        .contact-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 11px;
+        }
+
+
+        .contact-button {
+
+            padding: 10px 16px;
 
             border-radius: 9px;
 
             background: white;
 
-            color: #1d4ed8;
+            color: var(--primary-dark);
+
+            font-size: 13px;
+
+            font-weight: 650;
+        }
+
+
+        .contact-button-outline {
+
+            padding: 10px 16px;
+
+            border-radius: 9px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.48);
+
+            color: white;
+
+            font-size: 13px;
 
             font-weight: 600;
-
-            position: relative;
-            z-index: 2;
         }
 
 
-        /* =========================
+
+        /* =========================================================
            Footer
-        ========================== */
+        ========================================================= */
 
         footer {
-            padding: 35px 0;
 
-            border-top: 1px solid var(--border);
+            padding: 34px 0;
+
+            border-top:
+                1px solid
+                var(--border);
         }
 
+
         .footer-content {
+
             display: flex;
 
             justify-content: space-between;
+
             align-items: center;
 
             gap: 25px;
+        }
+
+
+        .footer-logo {
+
+            font-size: 18px;
+
+            font-weight: 750;
+        }
+
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+
+        .footer-motto {
+
+            margin-top: 3px;
 
             color: var(--text-light);
 
-            font-size: 13px;
+            font-size: 10px;
+
+            letter-spacing: 2px;
         }
 
-        .footer-brand {
-            color: var(--text-main);
 
-            font-size: 18px;
-            font-weight: 700;
-        }
+        .footer-links {
 
-        .footer-brand span {
-            color: var(--primary);
-        }
-
-        .social-links {
             display: flex;
+
             gap: 20px;
+
+            font-size: 12px;
+
+            color: var(--text-secondary);
         }
 
-        .social-links a {
-            transition: 0.2s;
-        }
 
-        .social-links a:hover {
+        .footer-links a:hover {
             color: var(--primary);
         }
 
 
-        /* =========================
-           Responsive
-        ========================== */
+        .copyright {
 
-        @media (max-width: 900px) {
+            color: var(--text-light);
+
+            font-size: 11px;
+        }
+
+
+
+        /* =========================================================
+           Responsive - Tablet
+        ========================================================= */
+
+        @media (max-width: 980px) {
 
             .hero-grid {
+
                 grid-template-columns: 1fr;
 
                 gap: 55px;
             }
 
-            .hero {
-                padding-top: 60px;
-            }
 
             .portrait-area {
+
                 justify-content: flex-start;
             }
 
+
             .portrait-wrapper {
-                max-width: 340px;
+
+                width: 330px;
             }
 
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
 
             .project-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
             }
+
+
+            .skills-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .awards-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
 
             .nav-links {
-                gap: 17px;
+
+                gap: 16px;
             }
 
-            .nav-links a:nth-child(3),
-            .nav-links a:nth-child(4) {
+
+            .nav-links li:nth-child(5),
+            .nav-links li:nth-child(6) {
+
                 display: none;
             }
         }
 
 
-        @media (max-width: 650px) {
+
+        /* =========================================================
+           Responsive - Mobile
+        ========================================================= */
+
+        @media (max-width: 720px) {
 
             .container {
-                width: min(
-                    100% - 30px,
-                    var(--container-width)
-                );
+
+                width:
+                    min(
+                        100% - 30px,
+                        var(--container-width)
+                    );
             }
 
-            nav {
-                height: 65px;
+
+            .navbar {
+                height: 66px;
             }
 
-            .nav-links a {
-                display: none;
-            }
 
-            .nav-links a:last-child {
+            .menu-button {
                 display: block;
             }
 
-            .hero {
-                padding: 52px 0 55px;
+
+            .nav-links {
+
+                position: absolute;
+
+                left: 15px;
+
+                right: 15px;
+
+                top: 66px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 12px;
+
+                border:
+                    1px solid
+                    var(--border);
+
+                border-radius: 13px;
+
+                background: white;
+
+                box-shadow:
+                    0 15px 40px
+                    rgba(15, 23, 42, 0.10);
             }
+
+
+            .nav-links.open {
+                display: flex;
+            }
+
+
+            .nav-links li {
+
+                display: block !important;
+            }
+
+
+            .nav-links a {
+
+                display: block;
+
+                padding: 11px 10px;
+            }
+
+
+            .nav-cv {
+
+                border: 0;
+
+                padding: 11px 10px;
+            }
+
+
+            .hero {
+
+                padding: 57px 0 65px;
+            }
+
 
             .hero h1 {
-                font-size: 42px;
 
-                letter-spacing: -1.7px;
+                font-size: 43px;
+
+                letter-spacing: -1.8px;
             }
 
+
             .hero-description {
+
                 font-size: 15px;
             }
 
-            section {
-                padding: 58px 0;
+
+            .portrait-wrapper {
+
+                width:
+                    min(
+                        100%,
+                        330px
+                    );
             }
 
+
+            .portrait-note {
+
+                right: -4px;
+            }
+
+
+            section.content-section {
+
+                padding: 60px 0;
+            }
+
+
             .section-header {
-                align-items: flex-start;
+
                 flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+            }
+
+
+            .research-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .awards-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .publication {
+
+                grid-template-columns: 1fr;
 
                 gap: 10px;
             }
 
+
             .timeline-item {
+
                 grid-template-columns: 1fr;
 
-                gap: 5px;
+                gap: 6px;
             }
 
-            .portrait-caption {
-                right: -5px;
-            }
 
             .contact-card {
-                padding: 35px 25px;
+
+                padding: 36px 26px;
             }
 
+
             .footer-content {
+
                 flex-direction: column;
+
                 align-items: flex-start;
             }
+
+        }
+
+
+
+        /* =========================================================
+           Very Small Screens
+        ========================================================= */
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+
+                font-size: 37px;
+            }
+
+
+            .button {
+
+                width: 100%;
+            }
+
+
+            .hero-actions {
+
+                flex-direction: column;
+            }
+
+
+            .contact-links {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         Navigation
-    ========================== -->
 
-    <header>
+<!-- =============================================================
+     Navigation
+============================================================= -->
 
-        <nav class="container">
+<header>
 
-            <a href="#" class="logo">
-                Wei <span>Shao.</span>
-            </a>
+    <nav class="container navbar">
 
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#publications">Publications</a>
-                <a href="#projects">Projects</a>
-                <a href="cv.pdf" target="_blank">CV</a>
-                <a href="#contact">Contact</a>
+        <a href="#about"
+           class="logo">
+
+            Wei <span>Shao.</span>
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation">
+
+            ☰
+
+        </button>
+
+
+        <ul
+            class="nav-links"
+            id="navLinks">
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#research">
+                    Research
+                </a>
+            </li>
+
+            <li>
+                <a href="#publications">
+                    Publications
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#education">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="#awards">
+                    Awards
+                </a>
+            </li>
+
+            <li>
+
+                <a
+                    href="cv.pdf"
+                    target="_blank"
+                    class="nav-cv">
+
+                    CV
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+
+<!-- =============================================================
+     HERO / ABOUT
+============================================================= -->
+
+<section
+    class="hero"
+    id="about">
+
+    <div class="hero-decoration"></div>
+
+
+    <div class="container hero-grid">
+
+
+        <!-- Left -->
+
+        <div class="hero-copy">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-line"></span>
+
+                M.S. Student · Hefei University of Technology
+
             </div>
 
-        </nav>
 
-    </header>
+            <h1>
 
+                Building Efficient and Reliable
 
+                <span class="blue">
+                    Mobile GUI Agents.
+                </span>
 
-    <!-- =========================
-         Hero / About
-    ========================== -->
-
-    <main>
-
-        <section
-            class="hero"
-            id="about"
-        >
-
-            <div class="container hero-grid">
+            </h1>
 
 
-                <!-- Left -->
+            <p class="hero-description">
+
+                I am a master's student in Computer Technology
+                at Hefei University of Technology.
+
+                My research focuses on Large Language Model agents,
+                Mobile GUI Agents, Retrieval-Augmented Generation,
+                multimodal intelligence, multi-agent systems,
+                and context compression.
+
+                I am particularly interested in building efficient,
+                reliable, and generalizable agent systems that can
+                reason, retrieve knowledge, maintain useful context,
+                and interact with real-world applications.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#research"
+                    class="button button-primary">
+
+                    Explore My Research →
+
+                </a>
+
+
+                <a
+                    href="cv.pdf"
+                    target="_blank"
+                    class="button button-secondary">
+
+                    View CV
+
+                </a>
+
+            </div>
+
+
+
+            <div class="research-tags">
+
+                <span class="tag">
+                    Mobile GUI Agents
+                </span>
+
+                <span class="tag">
+                    LLM Agents
+                </span>
+
+                <span class="tag">
+                    RAG
+                </span>
+
+                <span class="tag">
+                    Multi-Agent Systems
+                </span>
+
+                <span class="tag">
+                    Context Compression
+                </span>
+
+                <span class="tag">
+                    Multimodal AI
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Right / Portrait -->
+
+        <div class="portrait-area">
+
+            <div class="portrait-wrapper">
+
+                <div class="portrait-bg"></div>
+
+
+                <img
+                    src="profile.jpg"
+                    alt="Wei Shao"
+                    class="portrait">
+
+
+                <div class="portrait-note">
+
+                    Explore · Build · Share
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     RESEARCH
+============================================================= -->
+
+<section
+    class="content-section alt"
+    id="research">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Selected Research
+                </h2>
+
+                <p class="section-description">
+
+                    My current research interests center on
+                    intelligent agents, context-efficient reasoning,
+                    retrieval-augmented systems, and reliable
+                    interaction with mobile applications.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="#publications"
+                class="section-link">
+
+                View Publications →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="research-grid">
+
+
+            <!-- Research 1 -->
+
+            <article class="card research-card">
+
+                <div class="card-label">
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+                    Current Research
+
+                </div>
+
+
+                <h3>
+
+                    Task-Aware Executable-Context
+                    Compression for Mobile GUI Agents
+
+                </h3>
+
+
+                <p>
+
+                    Exploring task-aware context compression
+                    strategies for mobile GUI agents.
+
+                    The goal is to reduce redundant contextual
+                    information while retaining executable,
+                    task-relevant evidence required for
+                    reliable planning and interaction.
+
+                </p>
+
+
+                <div class="small-tags">
+
+                    <span class="small-tag">
+                        Mobile GUI Agent
+                    </span>
+
+                    <span class="small-tag">
+                        Context Compression
+                    </span>
+
+                    <span class="small-tag">
+                        LLM Agent
+                    </span>
+
+                    <span class="small-tag">
+                        Agent Efficiency
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Research 2 -->
+
+            <article class="card research-card">
+
+                <div class="card-label">
+
+                    <span class="card-number">
+                        02
+                    </span>
+
+                    Research Direction
+
+                </div>
+
+
+                <h3>
+
+                    Efficient Memory and Context
+                    Modeling for Intelligent Agents
+
+                </h3>
+
+
+                <p>
+
+                    Investigating retrieval, context selection,
+                    conversational memory, dynamic prompts,
+                    and long-horizon information management
+                    for LLM-powered agent systems.
+
+                </p>
+
+
+                <div class="small-tags">
+
+                    <span class="small-tag">
+                        Agent Memory
+                    </span>
+
+                    <span class="small-tag">
+                        RAG
+                    </span>
+
+                    <span class="small-tag">
+                        Long-Horizon Reasoning
+                    </span>
+
+                    <span class="small-tag">
+                        Multi-Agent
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     PROJECTS
+============================================================= -->
+
+<section
+    class="content-section"
+    id="projects">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Selected Projects
+                </h2>
+
+                <p class="section-description">
+
+                    Research and engineering projects spanning
+                    LLM agents, retrieval-augmented generation,
+                    deep reinforcement learning,
+                    and intelligent automation.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+            <!-- Project 1 -->
+
+            <article class="card project-card">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        AI
+                    </div>
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Multimodal Social Media Agent Platform
+                </h3>
+
+
+                <p>
+
+                    A multi-agent platform integrating
+                    retrieval-augmented generation,
+                    personalized agents,
+                    automated content production,
+                    social-media interaction,
+                    multi-source retrieval,
+                    reranking,
+                    dynamic prompt state machines,
+                    and conversational memory.
+
+                </p>
+
+
+                <div class="small-tags">
+
+                    <span class="small-tag">
+                        RAG
+                    </span>
+
+                    <span class="small-tag">
+                        Multi-Agent
+                    </span>
+
+                    <span class="small-tag">
+                        Rerank
+                    </span>
+
+                    <span class="small-tag">
+                        Agent Memory
+                    </span>
+
+                    <span class="small-tag">
+                        MCP
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Project 2 -->
+
+            <article class="card project-card">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        GUI
+                    </div>
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Mobile GUI Agent & Context Compression
+                </h3>
+
+
+                <p>
+
+                    Research on reducing the execution context
+                    required by mobile GUI agents while
+                    preserving task-relevant information.
+
+                    The work focuses on context efficiency,
+                    agent reasoning, task execution,
+                    and evaluation.
+
+                </p>
+
+
+                <div class="small-tags">
+
+                    <span class="small-tag">
+                        Mobile Agent
+                    </span>
+
+                    <span class="small-tag">
+                        LLM
+                    </span>
+
+                    <span class="small-tag">
+                        GUI Automation
+                    </span>
+
+                    <span class="small-tag">
+                        Compression
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Project 3 -->
+
+            <article class="card project-card">
+
+                <div class="project-top">
+
+                    <div class="project-icon">
+                        RL
+                    </div>
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Deep Reinforcement Learning
+                    for Precision Irrigation
+                </h3>
+
+
+                <p>
+
+                    Led a research project using DQN,
+                    LSTM, DSSAT, and multi-source
+                    agricultural data to model irrigation
+                    decision-making based on soil conditions,
+                    environmental factors,
+                    and crop growth.
+
+                </p>
+
+
+                <div class="small-tags">
+
+                    <span class="small-tag">
+                        DQN
+                    </span>
+
+                    <span class="small-tag">
+                        LSTM
+                    </span>
+
+                    <span class="small-tag">
+                        DSSAT
+                    </span>
+
+                    <span class="small-tag">
+                        Smart Agriculture
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     SKILLS
+============================================================= -->
+
+<section class="content-section alt">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Research & Technical Expertise
+                </h2>
+
+                <p class="section-description">
+
+                    Selected areas of research and engineering
+                    experience relevant to my current work.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    LLM & RAG
+                </h3>
+
+                <p>
+
+                    Large language models,
+                    vector retrieval,
+                    multi-source retrieval,
+                    reranking,
+                    prompt design,
+                    conversational memory,
+                    and generation evaluation.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    Agent Systems
+                </h3>
+
+                <p>
+
+                    Multi-agent systems,
+                    task orchestration,
+                    prompt state machines,
+                    sliding-window context,
+                    automated summaries,
+                    and agent memory.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h3>
+                    Engineering
+                </h3>
+
+                <p>
+
+                    Python, Java, JavaScript,
+                    Spring,
+                    CompletableFuture,
+                    modular architectures,
+                    design patterns,
+                    and MCP tool integration.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ∑
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+
+                    Deep learning,
+                    DQN,
+                    LSTM,
+                    Spark MLlib,
+                    Hadoop,
+                    MapReduce,
+                    data analysis,
+                    and experimental visualization.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     PUBLICATIONS
+============================================================= -->
+
+<section
+    class="content-section"
+    id="publications">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Publications & Research
+                </h2>
+
+                <p class="section-description">
+
+                    Selected publication and ongoing research work.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="publication-list">
+
+
+            <!-- Publication 1 -->
+
+            <article class="card publication">
 
                 <div>
 
-                    <div class="eyebrow">
-                        M.S. Student · Hefei University of Technology
+                    <div class="publication-index">
+                        01
                     </div>
 
-                    <h1>
-                        Building Efficient and Reliable
-                        <span class="highlight">
-                            Mobile GUI Agents.
-                        </span>
-                    </h1>
-
-                    <p class="hero-description">
-
-                        I am a master's student at
-                        Hefei University of Technology,
-                        focusing on Mobile GUI Agents,
-                        LLM Agents, Context Compression,
-                        Multimodal Reasoning,
-                        and Agent Efficiency.
-
-                        I am interested in building
-                        efficient, reliable, and generalizable
-                        intelligent agents that interact
-                        with real-world devices and applications.
-
-                    </p>
-
-
-                    <div class="hero-actions">
-
-                        <a
-                            href="#research"
-                            class="button button-primary"
-                        >
-                            View Research →
-                        </a>
-
-                        <a
-                            href="cv.pdf"
-                            target="_blank"
-                            class="button button-secondary"
-                        >
-                            Download CV
-                        </a>
-
-                    </div>
-
-
-                    <div class="research-tags">
-
-                        <span class="tag">
-                            Mobile GUI Agents
-                        </span>
-
-                        <span class="tag">
-                            LLM Agents
-                        </span>
-
-                        <span class="tag">
-                            Context Compression
-                        </span>
-
-                        <span class="tag">
-                            Multimodal Reasoning
-                        </span>
-
-                        <span class="tag">
-                            Agent Efficiency
-                        </span>
-
-                    </div>
+                    <span class="publication-type">
+                        Journal
+                    </span>
 
                 </div>
 
 
+                <div>
 
-                <!-- Right / Photo -->
+                    <h3 class="publication-title">
 
-                <div class="portrait-area">
+                        Optimal decision-making in the water,
+                        land, and food nexus using artificial
+                        intelligence and extreme machine learning
 
-                    <div class="portrait-wrapper">
-
-                        <div class="portrait-background"></div>
-
-                        <img
-                            src="profile.jpg"
-                            alt="Wei Shao"
-                            class="portrait"
-                        >
-
-                        <div class="portrait-caption">
-                            Explore · Build · Share
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Research
-        ========================== -->
-
-        <section id="research">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-                        <h2>
-                            Selected Research
-                        </h2>
-
-                        <p>
-                            My current research focuses on
-                            efficient context management,
-                            reasoning, and interaction
-                            for mobile intelligent agents.
-                        </p>
-                    </div>
-
-                    <a
-                        href="#publications"
-                        class="view-all"
-                    >
-                        View Publications →
-                    </a>
-
-                </div>
-
-
-
-                <div class="research-grid">
-
-
-                    <!-- Paper 1 -->
-
-                    <article class="research-card">
-
-                        <div class="paper-number">
-                            <strong>01</strong>
-                            Current Research
-                        </div>
-
-                        <h3>
-                            Task-Aware Executable-Context
-                            Compression for Mobile GUI Agents
-                        </h3>
-
-                        <p>
-                            A task-aware context compression
-                            framework designed to preserve
-                            executable information for mobile
-                            GUI agents while reducing
-                            unnecessary context and
-                            inference overhead.
-                        </p>
-
-                        <div class="paper-tags">
-
-                            <span class="paper-tag">
-                                Mobile Agent
-                            </span>
-
-                            <span class="paper-tag">
-                                Context Compression
-                            </span>
-
-                            <span class="paper-tag">
-                                LLM
-                            </span>
-
-                            <span class="paper-tag">
-                                GUI
-                            </span>
-
-                        </div>
-
-                        <div class="card-actions">
-
-                            <!--
-                            Replace # with your paper URL
-                            -->
-
-                            <a
-                                href="#"
-                                class="mini-button"
-                            >
-                                Paper
-                            </a>
-
-                            <!--
-                            Replace # with GitHub repository
-                            -->
-
-                            <a
-                                href="#"
-                                class="mini-button"
-                            >
-                                Code
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- Research Direction -->
-
-                    <article class="research-card">
-
-                        <div class="paper-number">
-                            <strong>02</strong>
-                            Research Direction
-                        </div>
-
-                        <h3>
-                            Efficient Memory and Context
-                            Modeling for GUI Agents
-                        </h3>
-
-                        <p>
-                            Exploring memory organization,
-                            context selection,
-                            task-aware information retention,
-                            and long-horizon reasoning
-                            for mobile automation systems
-                            powered by large language models.
-                        </p>
-
-                        <div class="paper-tags">
-
-                            <span class="paper-tag">
-                                Agent Memory
-                            </span>
-
-                            <span class="paper-tag">
-                                Long-Horizon
-                            </span>
-
-                            <span class="paper-tag">
-                                GUI Agent
-                            </span>
-
-                            <span class="paper-tag">
-                                LLM
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Projects
-        ========================== -->
-
-        <section id="projects">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <h2>
-                            Projects
-                        </h2>
-
-                        <p>
-                            Research prototypes and tools
-                            related to mobile agents,
-                            context compression,
-                            and agent evaluation.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="project-grid">
-
-
-                    <article class="project-card">
-
-                        <div class="project-top">
-
-                            <div class="project-icon">
-                                ◫
-                            </div>
-
-                            <div class="project-arrow">
-                                →
-                            </div>
-
-                        </div>
-
-                        <h3>
-                            Mobile-Agent-E
-                        </h3>
-
-                        <p>
-                            An experimental framework
-                            for mobile GUI agents,
-                            including task execution,
-                            reasoning,
-                            interaction,
-                            and evaluation.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="project-card">
-
-                        <div class="project-top">
-
-                            <div class="project-icon">
-                                ◉
-                            </div>
-
-                            <div class="project-arrow">
-                                →
-                            </div>
-
-                        </div>
-
-                        <h3>
-                            Context Compressor
-                        </h3>
-
-                        <p>
-                            A task-aware context compression
-                            component designed to reduce
-                            token usage while preserving
-                            information required
-                            for agent execution.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="project-card">
-
-                        <div class="project-top">
-
-                            <div class="project-icon">
-                                ▥
-                            </div>
-
-                            <div class="project-arrow">
-                                →
-                            </div>
-
-                        </div>
-
-                        <h3>
-                            Agent Evaluation Toolkit
-                        </h3>
-
-                        <p>
-                            Experimental tools for analyzing
-                            success rate,
-                            token efficiency,
-                            context retention,
-                            latency,
-                            and agent trajectories.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Education
-        ========================== -->
-
-        <section>
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <h2>
-                            Education & Experience
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline">
-
-
-                    <div class="timeline-item">
-
-                        <span class="timeline-dot"></span>
-
-                        <div class="timeline-date">
-                            Present
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <h3>
-                                Hefei University of Technology
-                            </h3>
-
-                            <p>
-                                Master's Student
-                                · Computer Science
-                                · Research on Mobile GUI Agents,
-                                LLM Agents,
-                                and Context Compression
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Publications
-        ========================== -->
-
-        <section id="publications">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <div>
-
-                        <h2>
-                            Publications
-                        </h2>
-
-                        <p>
-                            Papers and ongoing research
-                            will be listed here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <article class="research-card">
-
-                    <div class="paper-number">
-                        <strong>2026</strong>
-                        Research Paper
-                    </div>
-
-                    <h3>
-                        Task-Aware Executable-Context
-                        Compression for Mobile GUI Agents
                     </h3>
 
-                    <p>
-                        Wei Shao et al.
+
+                    <p class="publication-authors">
+
+                        <strong>Wei Shao</strong> et al.
+
                     </p>
 
-                    <div class="paper-tags">
 
-                        <span class="paper-tag">
+                    <p class="publication-venue">
+
+                        Water Supply
+
+                    </p>
+
+
+                    <div class="small-tags">
+
+                        <span class="small-tag">
+                            Artificial Intelligence
+                        </span>
+
+                        <span class="small-tag">
+                            Machine Learning
+                        </span>
+
+                        <span class="small-tag">
+                            Smart Agriculture
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Research Paper 2 -->
+
+            <article class="card publication">
+
+                <div>
+
+                    <div class="publication-index">
+                        02
+                    </div>
+
+                    <span class="publication-type">
+                        Current Work
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="publication-title">
+
+                        Task-Aware Executable-Context
+                        Compression for Mobile GUI Agents
+
+                    </h3>
+
+
+                    <p class="publication-authors">
+
+                        <strong>Wei Shao</strong> et al.
+
+                    </p>
+
+
+                    <p class="publication-venue">
+
+                        Ongoing research
+
+                    </p>
+
+
+                    <div class="small-tags">
+
+                        <span class="small-tag">
                             Mobile GUI Agent
                         </span>
 
-                        <span class="paper-tag">
+                        <span class="small-tag">
                             Context Compression
                         </span>
 
-                        <span class="paper-tag">
+                        <span class="small-tag">
                             Agentic AI
                         </span>
 
                     </div>
 
-                </article>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Contact
-        ========================== -->
-
-        <section id="contact">
-
-            <div class="container">
-
-                <div class="contact-card">
-
-                    <h2>
-                        Let's Connect.
-                    </h2>
-
-                    <p>
-                        Feel free to contact me
-                        regarding research,
-                        collaboration,
-                        or discussions about
-                        intelligent agents
-                        and mobile automation.
-                    </p>
-
-                    <a
-                        href="mailto:shao_wei@mail.hfut.edu.cn"
-                        class="contact-email"
-                    >
-                        shao_wei@mail.hfut.edu.cn
-                    </a>
-
                 </div>
 
-            </div>
-
-        </section>
+            </article>
 
 
-    </main>
+        </div>
+
+    </div>
+
+</section>
 
 
 
-    <!-- =========================
-         Footer
-    ========================== -->
+<!-- =============================================================
+     EDUCATION
+============================================================= -->
 
-    <footer>
+<section
+    class="content-section alt"
+    id="education">
 
-        <div class="container footer-content">
+    <div class="container">
+
+
+        <div class="section-header">
 
             <div>
 
-                <div class="footer-brand">
-                    Wei <span>Shao.</span>
-                </div>
+                <h2 class="section-title">
+                    Education
+                </h2>
 
-                <div>
-                    Explore · Build · Share
-                </div>
-
-            </div>
-
-
-            <div class="social-links">
-
-                <!-- Replace # with your links -->
-
-                <a
-                    href="#"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    href="#"
-                    target="_blank"
-                >
-                    Google Scholar
-                </a>
-
-                <a
-                    href="mailto:shao_wei@mail.hfut.edu.cn"
-                >
-                    Email
-                </a>
-
-            </div>
-
-
-            <div>
-                © 2026 Wei Shao
             </div>
 
         </div>
 
-    </footer>
+
+
+        <div class="timeline">
+
+
+            <!-- Master -->
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-date">
+
+                    2024 — Present
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Hefei University of Technology
+                    </h3>
+
+
+                    <div class="degree">
+
+                        M.S. Student in Computer Technology
+
+                    </div>
+
+
+                    <div class="timeline-detail">
+
+                        Research interests:
+                        Multimodal LLMs,
+                        Retrieval-Augmented Generation,
+                        Multi-Agent Systems,
+                        Mobile GUI Agents,
+                        and Context Compression.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Bachelor -->
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+
+                <div class="timeline-date">
+
+                    2020 — 2024
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Anhui University of Technology
+                    </h3>
+
+
+                    <div class="degree">
+
+                        B.E. in Software Engineering
+
+                    </div>
+
+
+                    <div class="timeline-detail">
+
+                        GPA: 3.7 / 4.5
+                        &nbsp; · &nbsp;
+                        Comprehensive Ranking: 2 / 166
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     AWARDS
+============================================================= -->
+
+<section
+    class="content-section"
+    id="awards">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <h2 class="section-title">
+                    Selected Awards
+                </h2>
+
+                <p class="section-description">
+
+                    Selected academic,
+                    programming,
+                    and engineering competition achievements.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="awards-grid">
+
+
+            <!-- Award 1 -->
+
+            <article class="card award-card">
+
+                <div class="award-label">
+                    National Award
+                </div>
+
+
+                <h3>
+                    National Gold Award
+                </h3>
+
+
+                <p>
+
+                    The 4th National College Student
+                    Algorithm Design and Programming Challenge.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- Award 2 -->
+
+            <article class="card award-card">
+
+                <div class="award-label">
+                    Academic Competition
+                </div>
+
+
+                <h3>
+                    First Prize
+                </h3>
+
+
+                <p>
+
+                    The 14th "Challenge Cup"
+                    Extracurricular Academic Science
+                    and Technology Competition
+                    at Anhui University of Technology.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- Award 3 -->
+
+            <article class="card award-card">
+
+                <div class="award-label">
+                    Engineering Competition
+                </div>
+
+
+                <h3>
+                    East China Second Prize
+                </h3>
+
+
+                <p>
+
+                    Siemens Cup China Intelligent
+                    Manufacturing Challenge,
+                    Information Networking Track.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     CONTACT
+============================================================= -->
+
+<section
+    class="contact-section"
+    id="contact">
+
+    <div class="container">
+
+
+        <div class="contact-card">
+
+            <div class="contact-content">
+
+
+                <h2>
+                    Let's Connect.
+                </h2>
+
+
+                <p>
+
+                    I am interested in research and collaboration
+                    related to intelligent agents,
+                    Mobile GUI Agents,
+                    retrieval-augmented generation,
+                    multi-agent systems,
+                    multimodal AI,
+                    and efficient context management.
+
+                    Feel free to reach out.
+
+                </p>
+
+
+                <div class="contact-links">
+
+
+                    <a
+                        href="mailto:shao_wei@mail.hfut.edu.cn"
+                        class="contact-button">
+
+                        Email Me
+
+                    </a>
+
+
+                    <!--
+                    Replace # with your real GitHub URL.
+                    Example:
+                    https://github.com/yourname
+                    -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-button-outline">
+
+                        GitHub
+
+                    </a>
+
+
+                    <!--
+                    Replace # with your Google Scholar URL.
+                    -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-button-outline">
+
+                        Google Scholar
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =============================================================
+     FOOTER
+============================================================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                Wei <span>Shao.</span>
+
+            </div>
+
+
+            <div class="footer-motto">
+
+                EXPLORE · BUILD · SHARE
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+
+            <!-- Replace # with your links -->
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                GitHub
+
+            </a>
+
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Google Scholar
+
+            </a>
+
+
+            <a
+                href="mailto:shao_wei@mail.hfut.edu.cn">
+
+                Email
+
+            </a>
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © <span id="currentYear"></span> Wei Shao
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =============================================================
+     JavaScript
+============================================================= -->
+
+<script>
+
+    /*
+     * Mobile navigation
+     */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuButton.addEventListener(
+        "click",
+        function () {
+
+            navLinks.classList.toggle("open");
+
+        }
+    );
+
+
+    /*
+     * Close menu after clicking a link
+     */
+
+    const mobileLinks =
+        navLinks.querySelectorAll("a");
+
+
+    mobileLinks.forEach(
+
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("open");
+
+                }
+            );
+
+        }
+
+    );
+
+
+    /*
+     * Automatically update copyright year
+     */
+
+    document.getElementById(
+        "currentYear"
+    ).textContent =
+        new Date().getFullYear();
+
+</script>
 
 
 </body>
