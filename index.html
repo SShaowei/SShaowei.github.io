@@ -6,14 +6,12 @@
 <title>Wei Shao | Hefei University of Technology</title>
 <script>
   /* Opening sequence: hide the page before first paint, the script at the end of <body> plays it.
-     Plays once per browser session; reduced-motion visitors get a short fade instead. */
+     Plays on every visit; reduced-motion visitors get a short fade instead. */
   (function () {
     var root = document.documentElement;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var seen = false;
-    try { seen = sessionStorage.getItem("ws-intro-seen") === "1"; } catch (e) {}
     if (reduce) { root.classList.add("intro-calm"); return; }
-    if (seen || location.hash) return;
+    if (location.hash) return;
     root.classList.add("intro-pending");
     setTimeout(function () {
       if (!window.__introStarted) root.classList.remove("intro-pending");
@@ -429,7 +427,6 @@ img { display: block; max-width: 100%; }
       anims.forEach(function (a) { try { a.cancel(); } catch (e) {} });
       anims = [];
       name.style.transformOrigin = "";
-      try { sessionStorage.setItem("ws-intro-seen", "1"); } catch (e) {}
     }
 
     function run() {
