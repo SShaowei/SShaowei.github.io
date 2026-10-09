@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wei Shao | Hefei University of Technology</title>
+<script>
+  /* Opening sequence: hide the page before first paint, the script at the end of <body> plays it.
+     Plays once per browser session; reduced-motion visitors get a short fade instead. */
+  (function () {
+    var root = document.documentElement;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var seen = false;
+    try { seen = sessionStorage.getItem("ws-intro-seen") === "1"; } catch (e) {}
+    if (reduce) { root.classList.add("intro-calm"); return; }
+    if (seen || location.hash) return;
+    root.classList.add("intro-pending");
+    setTimeout(function () {
+      if (!window.__introStarted) root.classList.remove("intro-pending");
+    }, 4000);
+  })();
+</script>
 <meta name="description" content="Wei Shao is a master's student at Hefei University of Technology working on mobile GUI agents, context compression, LLM agents, RAG and multi-agent systems.">
 <meta name="keywords" content="Wei Shao, Mobile GUI Agents, LLM Agents, RAG, Multi-Agent Systems, Context Compression, Multimodal AI, Hefei University of Technology">
 <meta name="author" content="Wei Shao">
@@ -86,8 +102,16 @@ img { display: block; max-width: 100%; }
 .topbar p { margin: 0; color: var(--quiet); }
 .topbar nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 
+/* Opening sequence */
+.intro-pending .name,
+.intro-pending [data-reveal] { opacity: 0; }
+.intro-calm .page { animation: calm-in 400ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+@keyframes calm-in { from { opacity: 0; } }
+
 /* Name */
 .name {
+  position: relative;
+  z-index: 1;
   margin: 40px 0 0;
   font-size: clamp(48px, 13.2vw, 200px);
   font-stretch: 125%;
@@ -256,7 +280,7 @@ img { display: block; max-width: 100%; }
 
 <div class="page">
 
-<header class="topbar">
+<header class="topbar" data-reveal>
   <p>Hefei University of Technology</p>
   <nav aria-label="Profiles">
     <a href="mailto:shao_wei@mail.hfut.edu.cn">Email</a>
@@ -271,8 +295,8 @@ img { display: block; max-width: 100%; }
 <h1 class="name">Wei Shao</h1>
 
 <div class="intro">
-  <img src="profile.jpg" alt="Wei Shao in profile, outdoors among autumn trees" width="300" height="375">
-  <div class="intro-text">
+  <img src="profile.jpg" alt="Wei Shao in profile, outdoors among autumn trees" width="300" height="375" data-reveal>
+  <div class="intro-text" data-reveal>
     <figure class="quote">
       <blockquote class="statement">“The best way to predict the future is to invent it.”</blockquote>
     </figure>
@@ -280,7 +304,7 @@ img { display: block; max-width: 100%; }
   </div>
 </div>
 
-<section class="index" aria-labelledby="index-title">
+<section class="index" aria-labelledby="index-title" data-reveal>
   <h2 class="section-title" id="index-title">Index</h2>
   <div class="index-head" aria-hidden="true">
     <span>Year</span><span>Work</span><span>Kind</span><span></span>
@@ -352,7 +376,7 @@ img { display: block; max-width: 100%; }
   </ol>
 </section>
 
-<div class="extras">
+<div class="extras" data-reveal>
   <section class="awards" aria-labelledby="awards-title">
     <h2 class="section-title" id="awards-title">Awards</h2>
     <ul>
@@ -369,7 +393,7 @@ img { display: block; max-width: 100%; }
 
 </main>
 
-<footer class="footer">
+<footer class="footer" data-reveal>
   <p class="footer-lead">Collaboration on agents, retrieval or context management is welcome.</p>
   <p class="email"><a href="mailto:shao_wei@mail.hfut.edu.cn">shao_wei@mail.hfut.edu.cn</a></p>
   <p class="copyright">© <span id="year">2026</span> Wei Shao</p>
@@ -379,6 +403,91 @@ img { display: block; max-width: 100%; }
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* Opening sequence (FLIP): the name fades in large at the centre of the screen,
+     then shrinks and travels to its place in the layout; the rest of the page follows. */
+  (function () {
+    var root = document.documentElement;
+    var name = document.querySelector(".name");
+    var parts = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
+    var EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
+    var EASE_IN_OUT = "cubic-bezier(0.77, 0, 0.175, 1)";
+    var SKIP_EVENTS = ["wheel", "touchstart", "keydown", "pointerdown"];
+    var anims = [];
+    var playing = false;
+
+    function stopListening() {
+      SKIP_EVENTS.forEach(function (t) { window.removeEventListener(t, end, true); });
+    }
+
+    function end() {
+      if (!playing) return;
+      playing = false;
+      stopListening();
+      anims.forEach(function (a) { try { a.finish(); } catch (e) {} });
+      root.classList.remove("intro-pending");
+      anims.forEach(function (a) { try { a.cancel(); } catch (e) {} });
+      anims = [];
+      name.style.transformOrigin = "";
+      try { sessionStorage.setItem("ws-intro-seen", "1"); } catch (e) {}
+    }
+
+    function run() {
+      window.__introStarted = true;
+      playing = true;
+      root.classList.add("intro-pending");
+      if (typeof name.animate !== "function" || window.scrollY > 4) { end(); return; }
+
+      // Measure the name's text box where the layout puts it (First, Last).
+      var box = name.getBoundingClientRect();
+      var range = document.createRange();
+      range.selectNodeContents(name);
+      var text = range.getBoundingClientRect();
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+
+      // Invert: start centred on screen and larger, then play back to the layout position.
+      var scale = Math.min(vw * 0.84 / text.width, vh * 0.42 / text.height);
+      scale = Math.max(1.15, Math.min(scale, 2.2));
+      var dx = vw / 2 - (text.left + text.width / 2);
+      var dy = vh / 2 - (text.top + text.height / 2);
+      var from = "translate(" + dx + "px, " + dy + "px) scale(" + scale + ")";
+      name.style.transformOrigin =
+        (text.left - box.left + text.width / 2) + "px " + (text.top - box.top + text.height / 2) + "px";
+
+      anims.push(name.animate([
+        { offset: 0, opacity: 0, filter: "blur(16px)", transform: from, easing: EASE_OUT },
+        { offset: 0.45, opacity: 1, filter: "blur(0px)", transform: from },
+        { offset: 0.6, opacity: 1, filter: "blur(0px)", transform: from, easing: EASE_IN_OUT },
+        { offset: 1, opacity: 1, filter: "blur(0px)", transform: "none" }
+      ], { duration: 3000, fill: "both" }));
+
+      parts.forEach(function (el, i) {
+        anims.push(el.animate([
+          { opacity: 0, transform: "translateY(16px)" },
+          { opacity: 1, transform: "none" }
+        ], { duration: 900, delay: 2650 + i * 80, easing: EASE_OUT, fill: "both" }));
+      });
+
+      SKIP_EVENTS.forEach(function (t) { window.addEventListener(t, end, { capture: true, passive: true }); });
+      Promise.all(anims.map(function (a) { return a.finished; })).then(end, function () {});
+    }
+
+    function start() {
+      window.__introStarted = true;
+      var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+      var timeout = new Promise(function (resolve) { setTimeout(resolve, 1200); });
+      Promise.race([fontsReady, timeout]).then(function () { requestAnimationFrame(run); });
+    }
+
+    window.playIntro = function () {
+      if (playing) end();
+      window.scrollTo(0, 0);
+      requestAnimationFrame(run);
+    };
+
+    if (root.classList.contains("intro-pending")) start();
+  })();
 </script>
 </body>
 </html>
