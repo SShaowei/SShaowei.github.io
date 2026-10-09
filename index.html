@@ -444,7 +444,8 @@ img { display: block; max-width: 100%; }
       range.selectNodeContents(name);
       var text = range.getBoundingClientRect();
       var vw = window.innerWidth;
-      var vh = window.innerHeight;
+      // Centre on the first screenful, even when the page sits in a frame taller than the screen.
+      var vh = Math.min(window.innerHeight, (window.screen && window.screen.height) || window.innerHeight);
 
       // Invert: start centred on screen and larger, then play back to the layout position.
       var scale = Math.min(vw * 0.84 / text.width, vh * 0.42 / text.height);
